@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="horizontal" android:background="#000000" android:padding="10dp">
+
+    <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical">
+        <LinearLayout style="@style/Big" android:layout_width="match_parent" android:layout_height="0dp" android:orientation="vertical">
+            <TextClock android:id="@+id/clock" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:format24Hour="HH:mm" android:format12Hour="hh:mm" android:textColor="#FFFFFF" android:textSize="72sp"/>
+            <TextClock android:id="@+id/date" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:format24Hour="EEEE d MMMM" android:format12Hour="EEEE d MMMM" android:textColor="#B0B0B0" android:textSize="20sp"/>
+            <TextView android:id="@+id/weather" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="--°C" android:textColor="#4FC3F7" android:textSize="28sp" android:layout_marginTop="8dp"/>
+        </LinearLayout>
+        <LinearLayout style="@style/Big" android:layout_width="match_parent" android:layout_height="0dp" android:orientation="vertical" android:clickable="false" android:padding="12dp">
+            <TextView android:id="@+id/np_title" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="چیزی پخش نمی‌شود" android:textColor="#FFFFFF" android:textSize="22sp" android:singleLine="true" android:ellipsize="marquee" android:gravity="center"/>
+            <TextView android:id="@+id/np_artist" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="" android:textColor="#B0B0B0" android:textSize="16sp" android:singleLine="true" android:gravity="center"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+                <TextView android:id="@+id/btn_prev" style="@style/Big" android:text="⏮"/>
+                <TextView android:id="@+id/btn_play" style="@style/Big" android:text="▶"/>
+                <TextView android:id="@+id/btn_next" style="@style/Big" android:text="⏭"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1.2" android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+            <TextView android:id="@+id/b_map" style="@style/Big" android:text="🗺️\nنقشه"/>
+            <TextView android:id="@+id/b_music" style="@style/Big" android:text="🎵\nموزیک"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+            <TextView android:id="@+id/b_call" style="@style/Big" android:text="📞\nتماس"/>
+            <TextView android:id="@+id/b_cal" style="@style/Big" android:text="📅\nتقویم"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="0.6" android:orientation="horizontal">
+            <TextView android:id="@+id/q_bright" style="@style/Big" android:text="🔆"/>
+            <TextView android:id="@+id/q_bt" style="@style/Big" android:text="🔵"/>
+            <TextView android:id="@+id/q_wifi" style="@style/Big" android:text="📶"/>
+            <TextView android:id="@+id/q_mute" style="@style/Big" android:text="🔇"/>
+            <TextView android:id="@+id/b_apps" style="@style/Big" android:text="⠿"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
