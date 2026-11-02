@@ -1,45 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="horizontal" android:background="#000000" android:padding="10dp">
+    android:orientation="vertical" android:background="#000000" android:padding="8dp">
 
-    <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical">
-        <LinearLayout style="@style/Big" android:layout_width="match_parent" android:layout_height="0dp" android:orientation="vertical">
-            <TextClock android:id="@+id/clock" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:format24Hour="HH:mm" android:format12Hour="hh:mm" android:textColor="#FFFFFF" android:textSize="72sp"/>
-            <TextClock android:id="@+id/date" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:format24Hour="EEEE d MMMM" android:format12Hour="EEEE d MMMM" android:textColor="#B0B0B0" android:textSize="20sp"/>
-            <TextView android:id="@+id/weather" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="--°C" android:textColor="#4FC3F7" android:textSize="28sp" android:layout_marginTop="8dp"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="0.14"
+        android:orientation="horizontal" android:gravity="center_vertical">
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="horizontal">
+            <TextView android:id="@+id/s_wifi" style="@style/Ico" android:text="📶"/>
+            <TextView android:id="@+id/s_bt" style="@style/Ico" android:text="🔵"/>
+            <TextView android:id="@+id/s_gps" style="@style/Ico" android:text="🛰️"/>
+            <TextView android:id="@+id/s_mute" style="@style/Ico" android:text="🔊"/>
         </LinearLayout>
-        <LinearLayout style="@style/Big" android:layout_width="match_parent" android:layout_height="0dp" android:orientation="vertical" android:clickable="false" android:padding="12dp">
-            <TextView android:id="@+id/np_title" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:text="چیزی پخش نمی‌شود" android:textColor="#FFFFFF" android:textSize="22sp" android:singleLine="true" android:ellipsize="marquee" android:gravity="center"/>
-            <TextView android:id="@+id/np_artist" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:text="" android:textColor="#B0B0B0" android:textSize="16sp" android:singleLine="true" android:gravity="center"/>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
-                <TextView android:id="@+id/btn_prev" style="@style/Big" android:text="⏮"/>
-                <TextView android:id="@+id/btn_play" style="@style/Big" android:text="▶"/>
-                <TextView android:id="@+id/btn_next" style="@style/Big" android:text="⏭"/>
+        <TextClock android:id="@+id/clock" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:format24Hour="HH:mm" android:format12Hour="hh:mm" android:textColor="#FFFFFF" android:textSize="34sp"/>
+        <TextView android:id="@+id/weather" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:gravity="end" android:paddingRight="16dp" android:text="☁ --°" android:textColor="#FF8C00" android:textSize="26sp"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical">
+            <TextView android:id="@+id/b_radio" style="@style/Side" android:text="📻  رادیو"/>
+            <TextView android:id="@+id/b_navi" style="@style/Side" android:text="🧭  مسیریاب"/>
+            <TextView android:id="@+id/b_music" style="@style/Side" android:text="🎵  موزیک"/>
+        </LinearLayout>
+        <FrameLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1.5">
+            <com.example.carlauncher.Gauge android:id="@+id/gauge" android:layout_width="match_parent" android:layout_height="match_parent"
+                android:clickable="true"/>
+            <LinearLayout android:id="@+id/picker" android:layout_width="match_parent" android:layout_height="match_parent"
+                android:orientation="vertical" android:visibility="gone" android:background="#EE000000" android:padding="8dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+                    <TextView android:id="@+id/p_clock" style="@style/Big" android:text="⏰\nساعت" android:textSize="16sp"/>
+                    <TextView android:id="@+id/p_speed" style="@style/Big" android:text="🚗\nسرعت" android:textSize="16sp"/>
+                    <TextView android:id="@+id/p_music" style="@style/Big" android:text="🎵\nپخش" android:textSize="16sp"/>
+                    <TextView android:id="@+id/p_compass" style="@style/Big" android:text="🧭\nقطب‌نما" android:textSize="16sp"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
+                    <TextView android:id="@+id/p_logo" style="@style/Big" android:text="🏷️\nلوگو" android:textSize="16sp"/>
+                    <TextView android:id="@+id/p_nav" style="@style/Big" android:text="🗺️\nنقشه" android:textSize="16sp"/>
+                    <TextView android:id="@+id/p_auto" style="@style/Big" android:text="AUTO" android:textSize="16sp"/>
+                    <TextView android:id="@+id/p_close" style="@style/Big" android:text="✖" android:textSize="16sp"/>
+                </LinearLayout>
             </LinearLayout>
+        </FrameLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical">
+            <TextView android:id="@+id/b_phone" style="@style/Side" android:text="📞  تلفن"/>
+            <TextView android:id="@+id/b_net" style="@style/Side" android:text="🌐  اینترنت"/>
+            <TextView android:id="@+id/b_apps" style="@style/Side" android:text="⠿  برنامه‌ها"/>
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1.2" android:orientation="vertical">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
-            <TextView android:id="@+id/b_map" style="@style/Big" android:text="🗺️\nنقشه"/>
-            <TextView android:id="@+id/b_music" style="@style/Big" android:text="🎵\nموزیک"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="0.3" android:orientation="horizontal">
+        <TextView android:id="@+id/b_mic" style="@style/Big" android:layout_weight="0.5" android:text="🎤"/>
+        <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="3" android:orientation="horizontal"
+            android:background="@drawable/card" android:layout_margin="5dp" android:gravity="center_vertical">
+            <TextView android:id="@+id/btn_prev" style="@style/Ico" android:text="⏮"/>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                <TextView android:id="@+id/np_title" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="چیزی پخش نمی‌شود" android:textColor="#FFFFFF" android:textSize="18sp" android:singleLine="true" android:gravity="center"/>
+                <TextView android:id="@+id/np_artist" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textColor="#B0B0B0" android:textSize="14sp" android:singleLine="true" android:gravity="center"/>
+                <SeekBar android:id="@+id/seek" android:layout_width="match_parent" android:layout_height="wrap_content" android:max="1000"/>
+                <TextView android:id="@+id/np_time" android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="0:00 / 0:00" android:textColor="#FF8C00" android:textSize="13sp" android:gravity="center"/>
+            </LinearLayout>
+            <TextView android:id="@+id/btn_play" style="@style/Ico" android:text="▶"/>
+            <TextView android:id="@+id/btn_next" style="@style/Ico" android:text="⏭"/>
         </LinearLayout>
-        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal">
-            <TextView android:id="@+id/b_call" style="@style/Big" android:text="📞\nتماس"/>
-            <TextView android:id="@+id/b_cal" style="@style/Big" android:text="📅\nتقویم"/>
-        </LinearLayout>
-        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="0.6" android:orientation="horizontal">
-            <TextView android:id="@+id/q_bright" style="@style/Big" android:text="🔆"/>
-            <TextView android:id="@+id/q_bt" style="@style/Big" android:text="🔵"/>
-            <TextView android:id="@+id/q_wifi" style="@style/Big" android:text="📶"/>
-            <TextView android:id="@+id/q_mute" style="@style/Big" android:text="🔇"/>
-            <TextView android:id="@+id/b_apps" style="@style/Big" android:text="⠿"/>
-        </LinearLayout>
+        <TextView android:id="@+id/q_bright" style="@style/Big" android:layout_weight="0.4" android:text="☀️"/>
+        <TextView android:id="@+id/q_theme" style="@style/Big" android:layout_weight="0.4" android:text="🎨"/>
     </LinearLayout>
 </LinearLayout>

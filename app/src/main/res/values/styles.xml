@@ -7,11 +7,26 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:layout_margin">6dp</item>
+        <item name="android:layout_margin">5dp</item>
         <item name="android:background">@drawable/card</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">#FFFFFF</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+    <style name="Side" parent="Big">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+    <style name="Ico" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">14dp</item>
+        <item name="android:paddingRight">14dp</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">#FFFFFF</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
     </style>
